@@ -37,7 +37,7 @@ class MeetingMinutes(models.Model):
 
 class Resource(models.Model):
     resourceName = models.CharField(max_length=255)
-    resourceType = models.ForeignKey(ResourceType, on_delete=models.CASCADE)
+    resourceType = models.ForeignKey(Meeting, on_delete=models.CASCADE)
     URL = models.URLField()
     dateEntered = models.DateField()
     userID = models.ManyToManyField(User)
