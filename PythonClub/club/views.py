@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Meeting, MeetingMinutes, Resource, ResourceType, Event
 
 # Create your views here.
 def index(request):
