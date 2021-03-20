@@ -35,9 +35,19 @@ class MeetingMinutes(models.Model):
         db_table = 'meeting minutes'
         verbose_name_plural='meeting minutes'
 
+class ResourceType(models.Model):
+    typeName = models.CharField(max_length=255)
+    typeDescription=models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.typeName
+    
+    class Meta:
+        db_table='resourcetype'
+
 class Resource(models.Model):
     resourceName = models.CharField(max_length=255)
-    resourceType = models.ForeignKey(Meeting, on_delete=models.CASCADE)
+    resourceType = models.ForeignKey(ResourceType, on_delete=models.CASCADE)
     URL = models.URLField()
     dateEntered = models.DateField()
     userID = models.ManyToManyField(User)
@@ -48,15 +58,7 @@ class Resource(models.Model):
     class Meta:
         db_table = 'resource'
 
-class ResourceType(models.Model):
-    typeName = models.CharField(max_length=255)
-    typeDescription=models.CharField(max_length=255)
 
-    def __str__(self):
-        return self.typeName
-    
-    class Meta:
-        db_table='resourcetype'
 
 class Event(models.Model):
     eventTitle = models.CharField(max_length=255)
