@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Meeting, MeetingMinutes, Resource, ResourceType, Event
+from .models import Meeting, Resource, ResourceType, Event
 from .forms import MeetingForm, ResourceForm
 from django.contrib.auth.decorators import login_required
 
