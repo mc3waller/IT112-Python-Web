@@ -23,18 +23,6 @@ class Meeting(models.Model):
     class Meta:
         db_table="meeting"
 
-# class MeetingMinutes(models.Model):
-#     meetingID = models.ForeignKey(Meeting, on_delete=models.CASCADE)
-#     attendance = models.ManyToManyField(User)
-#     minutes = models.TimeField()
-    
-#     def __str___(self):
-#         return self.meetingID
-    
-#     class Meta:
-#         db_table = 'meeting minutes'
-#         verbose_name_plural='meeting minutes'
-
 class ResourceType(models.Model):
     typeName = models.CharField(max_length=255)
     typeDescription=models.CharField(max_length=255)
@@ -57,8 +45,6 @@ class Resource(models.Model):
     
     class Meta:
         db_table = 'resource'
-
-
 
 class Event(models.Model):
     eventTitle = models.CharField(max_length=255)
