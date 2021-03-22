@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Details for</h3>
+<h1>{{game.GameTitle}}</h1>
+<p>
+    <b>Developer:</b> {{game.Developer}}<br/>
+    <b>Genre:</b> {{game.Genre}}<br/>
+    <b>Release Date:</b> {{game.ReleaseDate}}<br/>
+    <b>Average Hours:</b> {{game.AverageHours}}<br/>
+    <b>Link:</b> <a href="{{game.GameUrl}}">{{game.GameUrl}}</a><br/><br/>
+    <b>Description</b><br/> {{game.Description}}<br/><br/>
+</p>
+{% endblock %}

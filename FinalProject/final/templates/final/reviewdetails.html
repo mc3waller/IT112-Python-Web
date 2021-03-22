@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Review for</h3>
+<h1>{{review.GameTitle}}</h1>
+<p>
+    Published by <b>{{review.User}}</b> on <i>{{review.ReviewDate}}</i><br/>
+    <b>Score</b>: {{review.GameScore}}/5<br/><br/>
+    <b>Summary</b><br/>{{review.ReviewContent}}
+</p>
+{% endblock %}

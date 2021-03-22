@@ -35,6 +35,7 @@ class Review(models.Model):
     ReviewTitle = models.CharField(max_length=255)
     GameTitle = models.ForeignKey(Game, on_delete = models.CASCADE)
     ReviewDate = models.DateField()
+    GameScore = models.DecimalField(max_digits=2, decimal_places=1)
     ReviewContent = models.TextField()
     User = models.ForeignKey(User, on_delete = models.CASCADE)
 
