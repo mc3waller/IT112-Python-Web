@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>Reviews</h2>
+<p>Get a glimpse of what to expect from games featured in our catalogue with in-depth reviews!</p>
 <ul>
     {% for r in review_list %}
         <li><a href="{% url 'reviewdetails' id=r.id %}"><b>{{ r.ReviewTitle }}</b></a> - <i>{{ r.GameScore }}/5</i></li>

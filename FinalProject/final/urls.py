@@ -10,4 +10,6 @@ urlpatterns = [
     path('addgenre/', views.addGenre, name = 'addgenre'),
     path('addgame/', views.addGame, name = 'addgame'),
     path('addreview/', views.addReview, name = 'addreview'),
+    path('loginmsg/', views.loginMessage, name='loginmessage'),
+    path('logoutmsg/', views.logoutMessage, name='logoutmessage'),
 ]

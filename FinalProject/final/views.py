@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Game, Genre, Review
 from . forms import GenreForm, GameForm, ReviewForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -28,6 +29,7 @@ def reviewDetails(request, id):
     return render(request, 'final/reviewdetails.html', {'review': review})
 
 
+@login_required
 def addGenre(request):
     form = GenreForm
 
@@ -42,6 +44,7 @@ def addGenre(request):
     return render(request, 'final/addgenre.html', {'form': form})
 
 
+@login_required
 def addGame(request):
     form = GameForm
 
@@ -56,6 +59,7 @@ def addGame(request):
     return render(request, 'final/addgame.html', {'form': form})
 
 
+@login_required
 def addReview(request):
     form = ReviewForm
 
@@ -68,3 +72,11 @@ def addReview(request):
     else:
         form = ReviewForm()
     return render(request, 'final/addreview.html', {'form': form})
+
+
+def loginMessage(request):
+    return render(request, 'final/loginmsg.html')
+
+
+def logoutMessage(request):
+    return render(request, 'final/logoutmsg.html')
